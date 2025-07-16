@@ -87,7 +87,7 @@ const galaxyParameters = {
 // Danh sách hình ảnh trái tim, kết hợp dữ liệu từ subdomain và mặc định
 const heartImages = [
     ...(window.dataLove2Loveloom && window.dataLove2Loveloom.data.heartImages ? window.dataLove2Loveloom.data.heartImages : []),
-    './image/1.jpg', './image/2.jpg', './image/3.jpg', './image/4.jpg'
+    './image/1.jpg', './image/2.jpg', './image/3.jpg', './image/4.jpg' ,'./image/5.jpg',
 ];
 
 const textureLoader = new THREE.TextureLoader();
