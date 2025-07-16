@@ -662,9 +662,11 @@ function createTextRings() {
         // ---- Kết thúc logic phân tích font ----
 
         // ---- Tạo texture chữ động ----
-        const textureHeight = 200;
-        const fontSize = Math.min(120, 0.7 * textureHeight);
-
+            //const textureHeight = 200;
+            //const fontSize = Math.min(120, 0.7 * textureHeight);'
+        const isMobile = window.innerWidth < 768;
+        const textureHeight = isMobile ? 400 : 200;
+        const fontSize = isMobile ? 110 : Math.min(120, 0.7 * textureHeight);
         // Đo chiều rộng của text để lặp lại
         const tempCanvas = document.createElement('canvas');
         const tempCtx = tempCanvas.getContext('2d');
@@ -674,7 +676,8 @@ function createTextRings() {
         let repeatedTextSegment = singleText + separator;
 
         let segmentWidth = tempCtx.measureText(repeatedTextSegment).width;
-        let textureWidthCircumference = 2 * Math.PI * ringRadius * 180; // Heuristic value
+       // let textureWidthCircumference = 2 * Math.PI * ringRadius * 180; // Heuristic value
+        let textureWidthCircumference = 2 * Math.PI * ringRadius * (isMobile ? 130 : 180);
         let repeatCount = Math.ceil(textureWidthCircumference / segmentWidth);
 
         let fullText = '';
